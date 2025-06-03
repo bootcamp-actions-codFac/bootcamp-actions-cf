@@ -7,6 +7,7 @@ jobs:
       - name: Hola mundo
         run: echo "Hola Mundo"
   seconds_jobs:
+    if: ${{ github.ref == 'refs/heads/main'}}
     needs: first_jobs
     runs-on: ubuntu-latest
     steps:
