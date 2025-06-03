@@ -2,12 +2,13 @@ name: Deploy to Server
 on: push
 jobs:
   first_jobs:
-    runs-on: ubutu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Hola mundo
         run: echo "Hola Mundo"
   seconds_jobs:
-    runs-on: ubutu-latest
+    needs: first_jobs
+    runs-on: ubutnu-latest
     steps:
       - name: Hola mundo
         run: echo "Hola Mundo 2"     
