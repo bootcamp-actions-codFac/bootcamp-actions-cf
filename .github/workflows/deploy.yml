@@ -1,0 +1,8 @@
+name: Deploy to Server
+on: push
+jobs:
+  first_jobs:
+    runs-on: ubutu-latest
+    steps:
+      - name: Hola mundo
+        run: echo "Hola Mundo"
