@@ -6,19 +6,13 @@ jobs:
     env:
       NAME: CodigoFacilito
     steps:
-      - name: Working before
-        run: ls -al
-        
-      - name: Action
-        uses: actions/checkout@v4
-        with: 
-          hola: 12
-        
-      - name: Working after
-        run: ls -al
-        
+      - name: Working DIR
+        id: step_1
+        run: echo "my-variable=Hola Mundo" >> $GITHUB_OUTPUT 
+
+      - name: obteenr comando
+        run: echo "${{ steps.step_1.outputs.my_variable }}"
   seconds_jobs:
-    if: ${{ github.ref == 'refs/heads/main'}}
     needs: first_jobs
     runs-on: ubuntu-latest
     steps:
