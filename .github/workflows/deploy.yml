@@ -6,8 +6,10 @@ jobs:
     env:
       NAME: CodigoFacilito
     steps:
-      - name: Hola mundo
-        run: echo "Hola Mundo"
+      - name: Working
+        run: ls -al
+      - name: Action
+        uses: actions/checkout@v4
   seconds_jobs:
     if: ${{ github.ref == 'refs/heads/main'}}
     needs: first_jobs
