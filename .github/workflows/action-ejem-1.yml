@@ -4,6 +4,13 @@ name: Mi Primer Workflow
 # Evento(s) que disparan el workflow
 on: 
   push:
+    branches:
+      - main
+      - 'feature/**' # Todas las ramas que empiezan con feature/
+    branches-ignore:
+      - 'dev/**' # Ignora ramas que empiezan con dev/
+    tags:
+      - 'v*' # Todas las etiquetas que empiezan con v (ej: v1.0, v2.3.1)
   pull_request:
 
 # Trabajos que se ejecutarán
