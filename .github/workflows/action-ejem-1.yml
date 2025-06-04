@@ -1,22 +1,17 @@
-# Nombre del workflow (opcional, pero recomendado)
-name: Mi Primer Workflow
-
-# Evento(s) que disparan el workflow
-on: 
-  push:
-    branches:
-      - main
-      - 'feature/**' # Todas las ramas que empiezan con feature/
-    branches-ignore:
-      - 'dev/**' # Ignora ramas que empiezan con dev/
-    tags:
-      - 'v*' # Todas las etiquetas que empiezan con v (ej: v1.0, v2.3.1)
-
-# Trabajos que se ejecutarán
-jobs:
-  mi_primer_job: # ID del job
-    name: Saludar # Nombre legible del job (opcional)
-    runs-on: ubuntu-latest # Tipo de runner a usar
-    steps:
-      - name: Paso 1 - Imprimir saludo
-        run: echo "¡Hola Mundo desde GitHub Actions!"
+name: Despliegue Manual
+on:
+  workflow_dispatch:
+    inputs: # Opcional: define entradas que el usuario puede proporcionar
+      environment:
+        description: 'Entorno de despliegue'
+        required: true
+        default: 'staging'
+        type: choice # Tipos: string, choice, boolean, environment
+        options:
+          - staging
+          - production
+      logLevel:
+        description: 'Nivel de Log'
+        required: false
+        default: 'info'
+        type: string
