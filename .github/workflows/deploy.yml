@@ -8,10 +8,15 @@ jobs:
     steps:
       - name: Working before
         run: ls -al
+        
       - name: Action
         uses: actions/checkout@v4
+        with: 
+          hola: 12
+        
       - name: Working after
         run: ls -al
+        
   seconds_jobs:
     if: ${{ github.ref == 'refs/heads/main'}}
     needs: first_jobs
