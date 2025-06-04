@@ -6,10 +6,12 @@ jobs:
     env:
       NAME: CodigoFacilito
     steps:
-      - name: Working
+      - name: Working before
         run: ls -al
       - name: Action
         uses: actions/checkout@v4
+      - name: Working after
+        run: ls -al
   seconds_jobs:
     if: ${{ github.ref == 'refs/heads/main'}}
     needs: first_jobs
