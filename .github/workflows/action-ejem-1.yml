@@ -2,7 +2,9 @@
 name: Mi Primer Workflow
 
 # Evento(s) que disparan el workflow
-on: push # Se ejecuta en cada push
+on: 
+  push:
+  pull_request:
 
 # Trabajos que se ejecutarán
 jobs:
