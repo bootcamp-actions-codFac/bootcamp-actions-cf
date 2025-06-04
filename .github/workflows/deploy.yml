@@ -3,8 +3,8 @@ on: push
 jobs:
   first_jobs:
     runs-on: ubuntu-latest
-    env:
-      NAME: CodigoFacilito
+    outputs:
+     salida: ${{ steps.step_1.outputs.my_variable }}
     steps:
       - name: Working DIR
         id: step_1
@@ -15,6 +15,9 @@ jobs:
   seconds_jobs:
     needs: first_jobs
     runs-on: ubuntu-latest
+
+    env:
+      SALIDA: ${{ needs.first_job.outputs.salida}}
     steps:
       - name: Hola mundo
-        run: echo "Hola Mundo 2 ${{ github.ref }}"     
+        run: echo "$SALIDA"     
