@@ -4,11 +4,11 @@ name: Mi Primer Workflow
 # Evento(s) que disparan el workflow
 on: push # Se ejecuta en cada push
 
+# Trabajos que se ejecutarán
 jobs:
-  mi_primer_job:
-    name: Saludar
-    runs-on: ubuntu:latest
+  mi_primer_job: # ID del job
+    name: Saludar # Nombre legible del job (opcional)
+    runs-on: ubuntu-latest # Tipo de runner a usar
     steps:
-      - name: Paso 1 - Imprimir Saludo
-        run: echo "Hola Mundo!!"
-  
+      - name: Paso 1 - Imprimir saludo
+        run: echo "¡Hola Mundo desde GitHub Actions!"
