@@ -1,0 +1,14 @@
+# Nombre del workflow (opcional, pero recomendado)
+name: Mi Primer Workflow
+
+# Evento(s) que disparan el workflow
+on: push # Se ejecuta en cada push
+
+jobs:
+  mi_primer_job:
+    name: Saludar
+    runs-on: ubuntu:latest
+    steps:
+      - name: Paso 1 - Imprimir Saludo
+        run: echo "Hola Mundo!!"
+  
